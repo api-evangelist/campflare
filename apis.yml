@@ -1,0 +1,31 @@
+aid: campflare
+name: Campflare
+description: >-
+  Integrate availability alerts and outdoor data into your application, for
+  free. 
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - API
+created: '2024-11-14'
+modified: '2024-11-14'
+url: >-
+  https://raw.githubusercontent.com/api-search/campflare/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: campflare:campflare
+    name: Campflare
+    description: >-
+      Integrate availability alerts and outdoor data into your application, for
+      free. 
+    humanURL: ' https://campflare.com/api'
+    tags:
+      - API
+    properties:
+      - type: Documentation
+        url: ' https://campflare.com/api'
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
