@@ -15,17 +15,20 @@ apis:
       free. 
 name: Campflare
 tags:
-  - API
+  - Outdoor
+  - Campgrounds
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-14'
-modified: '2024-12-15'
+modified: '2024-12-20'
 position: Consuming
 description: >-
-  Outdoor data has become somewhat gate kept, when it should be a public good.
-  Although it is technically "open" data, obtaining such data is time consuming
-  and expensive. We hope to level the playing field through the Campflare API.
+  Integrate availability alerts and outdoor data into your application, for
+  free. Currently, the API supports availability alerts for all campgrounds
+  found on Campflare, and a small amount of additional campground data. We will
+  be expanding functionally of the API greatly in the next couple months. Our
+  goal is to become the go-to source of outdoor data.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
