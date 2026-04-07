@@ -3,8 +3,8 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/campflare/refs/heads/main/apis.yml
 name: Campflare
 tags:
-  - Outdoor
   - Campgrounds
+  - Outdoor
   - Recreation
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -20,8 +20,8 @@ apis:
   - aid: campflare:campflare
     name: Campflare API
     tags:
-      - Outdoor
       - Campgrounds
+      - Outdoor
     humanURL: https://campflare.com/api
     properties:
       - url: https://campflare.com/api
