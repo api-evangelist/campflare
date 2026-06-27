@@ -49,7 +49,7 @@ apis:
     properties:
       - type: Documentation
         url: https://campflare.com/api
-      - type: SignUp
+      - type: Signup
         url: mailto:contact@campflare.com
       - type: Webhooks
         url: https://campflare.com/api
@@ -60,7 +60,7 @@ common:
     url: https://campflare.com/
   - type: Documentation
     url: https://campflare.com/api
-  - type: Updates
+  - type: ReleaseNotes
     url: https://campflare.com/updates
   - type: FAQ
     url: https://campflare.com/info
