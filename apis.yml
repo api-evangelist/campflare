@@ -28,7 +28,7 @@ access: 3rd-Party
 created: '2024-11-14'
 modified: '2026-04-23'
 position: Provider
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 description: >-
   Campflare provides real-time campground availability data and cancellation
   alerts as a public API. The platform tracks campsites across every major
