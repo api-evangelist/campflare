@@ -22,6 +22,14 @@ tags:
   - Recreation
   - Availability
   - Alerts
+  - Webhook
+  - Reservations
+tags_raw:
+  - Campgrounds
+  - Outdoor
+  - Recreation
+  - Availability
+  - Alerts
   - Webhooks
   - Reservations
 access: 3rd-Party
@@ -53,6 +61,12 @@ apis:
       paid license.
     humanURL: https://campflare.com/api
     tags:
+      - Campgrounds
+      - Availability
+      - Alerts
+      - Webhook
+      - Outdoor
+    tags_raw:
       - Campgrounds
       - Availability
       - Alerts
