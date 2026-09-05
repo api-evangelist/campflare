@@ -1,0 +1,117 @@
+specification: API Evangelist Well-Known Probe
+specificationVersion: '0.1'
+provider: Campflare
+providerId: campflare
+generated: '2026-09-05'
+modified: '2026-09-05'
+method: probed
+source: >-
+  Live unauthenticated GET of the named /.well-known/ paths on every host this record
+  knows: the registrable domain and www, the API host (api.campflare.com, discovered by
+  DNS and confirmed by its own 200 body "Campflare API :)"), the status host
+  (status.campflare.com), the image CDN (cdn.campflare.com) and the map-tile host
+  (tiles.campflare.com).
+description: >-
+  Campflare publishes no /.well-known/ discovery documents on any host. Every named path
+  returned 404 (or, on the CDN, a 400 from its image-path router; on www, a 301 to the
+  apex, which itself 404s). This is a recorded absence, not a gap in our probing — no
+  WellKnown or SecurityTxt pointer is emitted in apis.yml because none of these paths
+  serves a document.
+result: no-documents-served
+hosts:
+  - host: campflare.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: www.campflare.com
+    note: 301 redirect to the apex host for every path; the apex serves none of them.
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+      - path: /.well-known/openid-configuration
+        status: 301
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+      - path: /.well-known/api-catalog
+        status: 301
+      - path: /.well-known/ai-plugin.json
+        status: 301
+  - host: api.campflare.com
+    note: >-
+      The production API host. Root returns HTTP 200 text/plain "Campflare API :)" and
+      /v2 returns HTTP 200 application/json {"name":"Campflare API v2"}. It serves no
+      discovery documents.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: status.campflare.com
+    note: Instatus-hosted status page; 404s are its Next.js catch-all, not documents.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: cdn.campflare.com
+    note: >-
+      Image CDN. Every path returns 400 application/json
+      {"error":"Invalid URL format. Use /image_id/size.jpg"} — a router error, not a document.
+    documents:
+      - path: /.well-known/security.txt
+        status: 400
+      - path: /.well-known/openid-configuration
+        status: 400
+      - path: /.well-known/oauth-authorization-server
+        status: 400
+      - path: /.well-known/api-catalog
+        status: 400
+      - path: /.well-known/ai-plugin.json
+        status: 400
+  - host: tiles.campflare.com
+    note: Map-tile host referenced by the /api page's "Map Layers" offering.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+also_probed:
+  - url: https://campflare.com/.well-known/agent-card.json
+    status: 404
+  - url: https://campflare.com/.well-known/agent.json
+    status: 404
+  - url: https://api.campflare.com/.well-known/agent-card.json
+    status: 404
+  - url: https://api.campflare.com/.well-known/agent.json
+    status: 404
+  - url: https://api.campflare.com/.well-known/oauth-protected-resource
+    status: 404
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,56 @@
+specification: API Evangelist Packages
+specificationVersion: '0.1'
+provider: Campflare
+providerId: campflare
+generated: '2026-09-05'
+modified: '2026-09-05'
+method: searched
+source: >-
+  Registry lookups against registry.npmjs.org, pypi.org, rubygems.org, crates.io and
+  repo.packagist.org, plus the Campflare developer page (https://campflare.com/api) and
+  the github.com/campflare organization (HTTP 200, zero public repositories).
+description: >-
+  Campflare publishes no first-party client libraries. The developer page names no SDK,
+  the GitHub organization has no public repositories, and no package exists under the
+  Campflare name on PyPI, RubyGems, crates.io or Packagist. One unrelated npm name-holder
+  exists and is recorded below so a consumer does not mistake it for an SDK. No SDKs
+  pointer is emitted in apis.yml because there is no first-party package to point at.
+official_package_count: 0
+packages: []
+name_holders_not_first_party:
+  - name: campflare
+    registry: npm
+    url: https://www.npmjs.com/package/campflare
+    version: 0.1.0
+    published: '2026-03-13'
+    official: false
+    note: >-
+      NOT a Campflare package. The published tarball contains only a package.json with an
+      empty description, no author, no repository, no homepage and no code files; the sole
+      maintainer is an npm account unrelated to Campflare or Vay Technologies LLC. Recorded
+      here as a name squat so it is never credited as a Campflare SDK.
+searched:
+  - registry: npm
+    query: campflare
+    result: 1 match, not first-party (see name_holders_not_first_party)
+  - registry: npm
+    query: '@campflare/sdk, campflare-api, campflare-sdk'
+    result: 404 — no such packages
+  - registry: pypi
+    query: campflare
+    result: 404
+  - registry: rubygems
+    query: campflare
+    result: 404
+  - registry: packagist
+    query: campflare/campflare
+    result: 404
+  - registry: crates.io
+    query: campflare
+    result: no crate (registry answered 403 to the unauthenticated API call)
+  - registry: github
+    query: github.com/campflare
+    result: organization exists (HTTP 200) with zero public repositories
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

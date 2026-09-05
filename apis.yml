@@ -45,7 +45,7 @@ tags_raw:
   - Reservations
 access: 3rd-Party
 created: '2024-11-14'
-modified: '2026-04-23'
+modified: '2026-09-05'
 position: Producing
 specificationVersion: '0.23'
 description: >-
@@ -71,6 +71,7 @@ apis:
       is free for individuals and non-profits; commercial use requires a
       paid license.
     humanURL: https://campflare.com/api
+    baseURL: https://api.campflare.com/v2
     tags:
       - Campgrounds
       - Availability
@@ -99,14 +100,55 @@ common:
     url: https://campflare.com/
   - type: Documentation
     url: https://campflare.com/api
-  - type: ReleaseNotes
-    url: https://campflare.com/updates
   - type: FAQ
     url: https://campflare.com/info
   - type: iOSApp
     url: https://apps.apple.com/us/app/campflare/id1670055811
   - type: Contact
     url: mailto:contact@campflare.com
+  - type: DeveloperPortal
+    url: https://campflare.com/api
+  - type: TermsOfService
+    url: https://campflare.com/legal
+  - type: PrivacyPolicy
+    url: https://campflare.com/legal
+  - type: Support
+    url: https://campflare.com/feedback
+  - type: Login
+    url: https://campflare.com/auth
+  - type: StatusPage
+    url: https://status.campflare.com/
+  - type: Lifecycle
+    url: lifecycle/campflare-lifecycle.yml
+  - type: Plans
+    url: plans/campflare-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/campflare-rate-limits.yml
+  - type: LLMsTxt
+    url: llms/campflare-llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-05'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v3
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Campflare's only developer page states "The Campflare API is temporarily invite only.
+    Please reach out to contact@campflare.com for access" and stands in for a reference —
+    there is no operation list, no schema and no machine-readable contract behind it, so
+    every spec probe against campflare.com and the live API host api.campflare.com missed.
+  evidence:
+    - url: https://campflare.com/api
+      status: 200
+    - url: https://api.campflare.com/openapi.json
+      status: 404
+    - url: https://api.campflare.com/v2
+      status: 200
+    - url: https://campflare.com/llms.txt
+      status: 404
+  checked: '2026-09-05'

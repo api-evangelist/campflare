@@ -4,10 +4,20 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Campflare
 providerId: campflare
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+generated: '2026-09-05'
+modified: '2026-09-05'
+method: searched
+source: https://campflare.com/api
+description: >-
+  Campflare publishes no rate limits. The developer page describes the data products and
+  the invite-only access process but names no quota, no window, no burst ceiling, no
+  throttling status code and no rate-limit response headers, and there is no separate
+  pricing or limits page (https://campflare.com/pricing 404). Runtime headers cannot be
+  observed either: the API is invite-only, and the two unauthenticated endpoints that do
+  answer — https://api.campflare.com/ and https://api.campflare.com/v2 — return no
+  RateLimit-*, X-RateLimit-* or Retry-After header. This file replaces a 2026-05-04 bulk
+  sweep scaffold whose tiers, per-minute limits, monthly quotas and header names were
+  invented; Campflare never published any of them.
 tags:
   - Campgrounds
   - Outdoor
@@ -17,78 +27,23 @@ tags:
   - Webhooks
   - Reservations
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Campflare API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Campflare Availability & Alerts API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Campflare Availability & Alerts API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Campflare Availability & Alerts API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Campflare Availability & Alerts API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Campflare Availability & Alerts API
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+limit_count: 0
+limits: []
+headers_published: false
+headers_observed: []
+response_codes_published: false
+observed:
+  - url: https://api.campflare.com/
+    status: 200
+    rate_limit_headers: none
+  - url: https://api.campflare.com/v2
+    status: 200
+    rate_limit_headers: none
+notes:
+  - >-
+    The FAQ at https://campflare.com/info states Campflare polls each campground "every 45
+    seconds or so" — that is Campflare's own upstream crawl cadence, not a limit imposed on
+    API consumers, and it is deliberately not recorded as one.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

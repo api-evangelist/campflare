@@ -1,0 +1,94 @@
+specification: API Evangelist Lifecycle
+specificationVersion: '0.1'
+provider: Campflare
+providerId: campflare
+generated: '2026-09-05'
+modified: '2026-09-05'
+method: searched
+source: https://status.campflare.com/
+description: >-
+  Campflare runs a public Instatus status page that monitors two separately-named API
+  components, "v1 API" and "v2 API" — the only public evidence of how Campflare versions
+  its API. The API host itself confirms the scheme: https://api.campflare.com/v2 returns
+  HTTP 200 application/json {"name":"Campflare API v2"}. Campflare publishes no
+  deprecation policy, no sunset schedule, no SLA and no dated changelog, so those are
+  recorded as absent rather than guessed at.
+status_page:
+  url: https://status.campflare.com/
+  platform: Instatus
+  http_status: 200
+  machine_readable:
+    url: https://status.campflare.com/summary.json
+    http_status: 200
+    body: '{"page":{"name":"Campflare","url":"https://status.campflare.com","status":"UP"}}'
+  subscribe_channels:
+    - email
+    - slack
+    - microsoft-teams
+    - google-chat
+    - webhook
+    - rss
+    - atom
+    - api
+  components:
+    - name: v1 API
+      state: Operational
+      uptime_90d: '100.0%'
+    - name: v2 API
+      state: Operational
+      uptime_90d: '100.0%'
+  observed: '2026-09-05'
+  note: >-
+    "All systems operational"; no notices reported in the trailing 7 days at time of probe.
+versioning:
+  scheme: uri-path
+  pattern: https://api.campflare.com/v{major}
+  current: v2
+  prior:
+    - v1
+  evidence:
+    - url: https://api.campflare.com/v2
+      status: 200
+      body: '{"name":"Campflare API v2"}'
+      note: Self-identifying version root on the Campflare-controlled API host.
+    - url: https://api.campflare.com/
+      status: 200
+      body: 'Campflare API :)'
+    - url: https://status.campflare.com/
+      status: 200
+      note: Status page monitors "v1 API" and "v2 API" as separate components.
+  note: >-
+    v1 is still monitored on the status page and reports 100% uptime, so it is treated as
+    live rather than retired. Campflare states no support window for it.
+deprecation_policy:
+  published: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  note: >-
+    No deprecation or sunset policy is published on campflare.com, and RFC 8594
+    Sunset/Deprecation header behavior cannot be observed without API access (the API is
+    invite-only). No Deprecation pointer is emitted in apis.yml.
+sla:
+  published: false
+  note: >-
+    No service-level agreement is published. The status page reports uptime after the
+    fact but commits to no target.
+changelog:
+  published: false
+  probed:
+    - url: https://campflare.com/updates
+      status: 404
+      note: >-
+        This URL was carried in apis.yml as a ReleaseNotes pointer and is now confirmed
+        dead; the pointer has been removed.
+    - url: https://campflare.com/changelog
+      status: 404
+    - url: https://campflare.com/blog
+      status: 404
+  note: >-
+    The iOS App Store listing carries version history, but its current release note reads
+    "Bug fixes and magic" and it describes the consumer app, not the API. It is not
+    recorded as an API changelog.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

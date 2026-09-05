@@ -1,0 +1,38 @@
+specification: API Evangelist MCP Manifest
+specificationVersion: '0.1'
+provider: Campflare
+providerId: campflare
+generated: '2026-09-05'
+modified: '2026-09-05'
+method: searched
+source: >-
+  Campflare developer page (https://campflare.com/api), github.com/campflare (zero public
+  repos), npm/PyPI registry searches, and direct probes of api.campflare.com for /mcp-style
+  discovery documents (/.well-known/oauth-protected-resource 404,
+  /.well-known/oauth-authorization-server 404).
+description: >-
+  Campflare ships no Model Context Protocol server — hosted or local — and publishes no
+  OpenAPI from which a candidate tool list could be derived without inventing operations.
+  Recorded as a completed search with no result. No MCPServer pointer is emitted in
+  apis.yml, and no candidate tools are listed, because doing either would assert an agent
+  surface Campflare does not serve.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []
+notes:
+  - >-
+    The Campflare API is invite-only (request access at contact@campflare.com), so no
+    public operation list exists to derive candidate tools from. Deriving one would be
+    fabrication, not derivation.
+  - >-
+    If Campflare later publishes a contract, the natural MCP tool surface is visible in
+    prose on https://campflare.com/api — campground lookup, campsite-level availability,
+    agency alerts, alert creation, and webhook delivery.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
