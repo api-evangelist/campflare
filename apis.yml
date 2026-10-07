@@ -92,6 +92,8 @@ apis:
       - type: Webhooks
         url: https://campflare.com/api
 common:
+  - type: Pricing
+    url: https://campflare.com/api
   - type: DomainSecurity
     url: security/campflare-domain-security.yml
   - type: GitHubOrganization
