@@ -92,6 +92,8 @@ apis:
       - type: Webhooks
         url: https://campflare.com/api
 common:
+  - type: FinOps
+    url: finops/campflare-finops.yml
   - type: Pricing
     url: https://campflare.com/api
   - type: DomainSecurity
