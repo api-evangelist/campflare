@@ -1,4 +1,4 @@
-# Campflare (campflare)
+# Campflare
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,61 +64,108 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Campflare provides real-time campground availability data and cancellation alerts as a public API. The platform tracks campsites across every major public reservation system in North America and notifies users (via webhook) the moment a site matching their criteria becomes available. Campflare's data and services are open to the public programmatically — individuals and non-profits get free access to all APIs, while commercial use requires a paid license. Campflare also powers partner products such as Hipcamp Alerts. Current API access is invite-only; requests go to contact@campflare.com and are typically granted within 24-48 hours.
+Campflare provides real-time campground availability data and cancellation alerts as a public API. The platform tracks campsites across every major public reservation system in North America and notifies users (via webhook) the moment a site matching their criteria becomes available. Campflare's data and services are open to the public programmatically — individuals and non-profits get free access to all APIs, while commercial use requires a paid license. Campflare also powers partner products such as Hipcamp Alerts. Current API access is invite-only; requests go to contact@campflare.com and are typically granted within 24–48 hours.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/campflare/refs/heads/main/apis.yml)
+**Areas:** Campgrounds · Outdoor · Recreation · Availability · Alerts · Webhook · Reservations
 
-## Scope
+## Campflare on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** 3rd-Party
+Everything profiled for Campflare is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/campflare/](https://apis.io/providers/campflare/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
- - Campgrounds, Outdoor, Recreation, Availability, Alerts, Webhooks, Reservations
+- [Campflare Availability & Alerts API](https://apis.io/apis/campflare/campflare-availability-api/) — Real-time campground availability data at the campsite level across all public campgrounds Campflare tracks. Developers can query current and upcoming…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-11-14
-- **Modified:** 2026-04-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (1)
 
-### Campflare Availability & Alerts API
+Authentication, trust centre, and vulnerability disclosure.
 
-Real-time campground availability data at the campsite level across all public campgrounds Campflare tracks. Developers can query current and upcoming availability, inspect amenities (hookups, facilities, accessibility), read official agency alerts and notices, create availability alerts with custom date/campground/site criteria, and receive webhook callbacks the moment a matching site opens up. The API is free for individuals and non-profits; commercial use requires a paid license.
+- [Campflare Domain Security](https://apis.io/security/campflare/campflare-domain-security/)
 
-**Human URL:** [https://campflare.com/api](https://campflare.com/api)
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
- - Campgrounds, Availability, Alerts, Webhooks, Outdoor
+- [Campflare Plans Pricing](https://apis.io/plans/campflare/campflare-plans-pricing/)
 
-#### Properties
+#### Rate limits (1)
 
-- [Documentation](https://campflare.com/api)
-- [Sign Up](mailto:contact@campflare.com)
-- [Webhooks](https://campflare.com/api)
+Published request limits.
 
-## Use Cases
+- [Campflare Rate Limits](https://apis.io/rate-limits/campflare/campflare-rate-limits/)
 
-- Travel apps that surface last-minute campsite openings in sold-out national and state parks.
-- Outdoor retail and community platforms (such as Hipcamp) embedding availability alerts as a value-add service.
-- Trip-planning tools that monitor multiple agency reservation systems through a single webhook stream.
-- Research and journalism tracking campground demand, pricing, and occupancy trends over time.
+#### FinOps (1)
 
-## Common Properties
+What the API costs to run, by operation.
+
+- [Campflare Finops](https://apis.io/finops/campflare/campflare-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://campflare.com/)
 - [Documentation](https://campflare.com/api)
-- [Updates](https://campflare.com/updates)
-- [FAQ](https://campflare.com/info)
-- [iOS App](https://apps.apple.com/us/app/campflare/id1670055811)
-- [Contact](mailto:contact@campflare.com)
+- [Pricing](https://campflare.com/api)
+- [Support](https://campflare.com/feedback)
+- [Terms of service](https://campflare.com/legal)
+- [Privacy policy](https://campflare.com/legal)
+- [GitHub](https://github.com/campflare)
+- [Status](https://status.campflare.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 26.1** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 59.2 |
+
+**Agent readiness 6.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/campflare/](https://apis.io/providers/campflare/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Campflare: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/campflare/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
