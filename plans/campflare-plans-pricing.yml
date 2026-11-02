@@ -1,0 +1,99 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Campflare
+providerId: campflare
+created: '2026-05-04'
+generated: '2026-09-05'
+modified: '2026-09-05'
+method: searched
+source: https://campflare.com/api
+description: >-
+  Campflare publishes access tiers but no prices. Its developer page states that any
+  individual or non-profit has free access to all Campflare APIs, and that commercial use
+  requires a paid license, with no rate card, no pricing page and no self-serve checkout —
+  https://campflare.com/pricing returns 404. Access to either tier is currently invite
+  only and granted by email. This file replaces a 2026-05-04 bulk-sweep scaffold whose
+  tier names, quotas and prices were invented; none of those values were ever published by
+  Campflare.
+tags:
+  - Campgrounds
+  - Outdoor
+  - Recreation
+  - Availability
+  - Alerts
+  - Webhooks
+  - Reservations
+plan_count: 2
+prices_published: false
+pricing_page: null
+plans:
+  - id: campflare-free-individual-nonprofit
+    name: Free — individuals and non-profits
+    type: free
+    price: '0.00'
+    currency: USD
+    billing_period: null
+    description: >-
+      Free access to all Campflare APIs for individuals and non-profit organizations,
+      stated verbatim on the developer page: "Any individual or non-profit has free access
+      to all of Campflare's APIs."
+    quota_published: false
+    overage_published: false
+    limits_published: false
+    onboarding: >-
+      Invite only. Request access at contact@campflare.com; the page states invites are
+      typically issued within 24 to 48 hours.
+    conditions:
+      - >-
+        Reasonable attribution to Campflare is required wherever Campflare data appears in
+        the consuming application.
+    source: https://campflare.com/api
+  - id: campflare-commercial-license
+    name: Commercial license
+    type: paid
+    price: null
+    currency: null
+    billing_period: null
+    description: >-
+      Commercial use requires a paid license, stated verbatim on the developer page:
+      "Commercial use requires a paid license which helps keep Campflare free." No price,
+      quota or contract term is published; the page also notes exceptions are sometimes
+      made for unique cases.
+    quota_published: false
+    overage_published: false
+    limits_published: false
+    onboarding: Contact contact@campflare.com.
+    conditions:
+      - Reasonable attribution to Campflare is required.
+    source: https://campflare.com/api
+notes:
+  - >-
+    The consumer product is separately free: https://campflare.com/support solicits
+    voluntary contributions and states "Paying does not unlock better access. Everyone
+    gets the same Campflare."
+  - >-
+    Campflare also sells bespoke data-engineering and web-scraping engagements through the
+    same contact address; no rate is published for that either.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Free — individuals and non-profits
+    access: free
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Commercial license
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
